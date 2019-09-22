@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Faces
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+    totalSpriteSurfaceArea: 130640
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -5538499448761425303, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 7285378032234747418, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 2530920999617147776, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -7250960061349751471, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 7442159267756367299, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 8882280879277773011, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 2238136341015891335, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -2624413391016279276, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 352667614993179775, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -5152761847031115688, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 6728078740956168734, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -651618223169677125, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -2666292968081224903, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 3007444510408479581, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: 3198389807996173960, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  - {fileID: -2074937458446889176, guid: af0b42d03218d5240a191e01e70bccf2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - faces_6
+  - faces_7
+  - faces_4
+  - faces_15
+  - faces_5
+  - faces_14
+  - faces_2
+  - faces_3
+  - faces_0
+  - faces_11
+  - faces_1
+  - faces_10
+  - faces_13
+  - faces_12
+  - faces_8
+  - faces_9
+  m_Tag: Faces
+  m_IsVariant: 0
