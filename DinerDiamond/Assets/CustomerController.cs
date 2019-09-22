@@ -123,10 +123,13 @@ public class CustomerController : MonoBehaviour
         for (int i = 0; i < customerGameObjects.Count; i++)
         {
             List<GameObject> tempList = listOfCustomers.Where(o => o.GetComponent<Customer>().isActive).ToList();
+            
             GameObject customer = customerGameObjects[i];
             Customer customerScript = customer.GetComponent<Customer>();
             Image imageComponent = customerScript.imageGameObject.GetComponent<Image>();
-            imageComponent.sprite = tempList[i].GetComponent<Customer>().imageGameObject.GetComponent<Image>().sprite;
+
+                imageComponent.sprite = tempList[i].GetComponent<Customer>().imageGameObject.GetComponent<Image>().sprite;
+
         }
     }
     
@@ -141,7 +144,7 @@ public class CustomerController : MonoBehaviour
     {
         List<GameObject> tempList = new List<GameObject>();
         
-        for (int i = 0; i < GameManager.Instance.CustomerCount-1; i++)
+        for (int i = 0; i < GameManager.Instance.CustomerCount; i++)
         {
             int rand = GameManager.Instance.GetRandomNumbers(customerProbabilities);
             GameObject go = Instantiate(customerPrefab,customerHost.transform);
@@ -182,11 +185,11 @@ public class CustomerController : MonoBehaviour
             CoinsEarned = 0;
             Feedback = "Oh no!";
             break;
-        case int n when (n > -4 && n <=0):
+        case int n when (n > -4 && n <=-1):
             CoinsEarned = 3;
             Feedback = "Not Bad";
             break;
-        case int n when (n > 0 && n <=2):
+        case int n when (n > -1 && n <=2):
             CoinsEarned =10;
             Feedback = "Sweet";
             break;
@@ -205,9 +208,19 @@ public class CustomerController : MonoBehaviour
         yield return new WaitUntil(() => !isAnimating);
         GameManager.Instance.ToggleButtons();
         RemoveCustomer();
+        CheckForNoMoreCustomers();
         AssignDemandAndTexts();
         AssignImages();
-        GameManager.Instance.CustomerCount--;
+
+        if (GameManager.Instance.CustomerCount == 1)
+        {
+            GameManager.Instance.EndGame();
+        }
+        else
+        {
+            GameManager.Instance.CustomerCount--;
+        }
+        
         
     }
 
@@ -233,8 +246,24 @@ public class CustomerController : MonoBehaviour
         _descriptionAnimator.SetBool(PlayAnimation,onOff);
         
     }
-    
-    
-    
-    
+
+
+    public void CheckForNoMoreCustomers()
+    {
+
+        List<GameObject> tempList = listOfCustomers.Where(o => o.GetComponent<Customer>().isActive).ToList();
+        for (int i = 0; i < customerGameObjects.Count; i++)
+        {
+            
+            
+            if (tempList.Count - i == 0) 
+            {
+                customerGameObjects[i].SetActive(false);
+                customerGameObjects.Remove(customerGameObjects[i]);
+
+            }
+        }
+    }
+
+
 }

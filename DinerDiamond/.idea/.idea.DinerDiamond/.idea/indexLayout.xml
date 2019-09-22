@@ -15,9 +15,12 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
+      <Path>Build</Path>
       <Path>Builds</Path>
+      <Path>DinerDiamond</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>New Unity Project</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>

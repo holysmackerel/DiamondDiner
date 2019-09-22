@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -30,7 +31,12 @@ public class GameManager : MonoBehaviour
     public int maxCustomers;
 
     public GameObject startScreenGameObject;
-
+    public GameObject endScreenGameObject;
+    public GameObject earnedScoreGameObject;
+    public GameObject highScoreEndScreenGameObject;
+    public GameObject highScoreInLevelGameObject;
+    public GameObject highScoreHUD;
+    
     public List<Sprite> foods;
     
     public bool isMouseDown;
@@ -54,6 +60,7 @@ public class GameManager : MonoBehaviour
              {
                  _coinCount = value;
                  coinTextGameObject.GetComponent<TextMeshProUGUI>().text = value.ToString();
+                 earnedScoreGameObject.GetComponent<TextMeshProUGUI>().text = CoinCount.ToString();
              }
          }
          
@@ -106,6 +113,18 @@ public class GameManager : MonoBehaviour
 
         CustomerCount = Random.Range(minCustomers, maxCustomers);
         CoinCount = 0;
+
+        if (HighScoreHolder.Instance.firstTimePlaying)
+        {
+            HighScoreHolder.Instance.firstTimePlaying = false;
+            highScoreHUD.SetActive(false);
+        }
+
+        else
+        {
+            HighScoreHolder.Instance.HighScore = HighScoreHolder.Instance.HighScore;
+        }
+        
     }
 
 
@@ -192,6 +211,31 @@ public class GameManager : MonoBehaviour
         
         
     }
+
+    public void EndGame()
+    {
+        endScreenGameObject.SetActive(true);
+
+        if (CoinCount > HighScoreHolder.Instance.HighScore)
+        {
+            HighScoreHolder.Instance.HighScore = CoinCount;
+        }
+
+        else
+        {
+            HighScoreHolder.Instance.HighScore = HighScoreHolder.Instance.HighScore;
+        }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+
+
+
+
 }
     
     
