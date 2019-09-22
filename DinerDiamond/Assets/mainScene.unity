@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &103737223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -949,8 +949,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 322, y: 650}
+  m_AnchoredPosition: {x: 34.240017, y: 0.5}
+  m_SizeDelta: {x: 471.3, y: 699.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290034600
 MonoBehaviour:
@@ -1183,7 +1183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162.5, y: 286.7}
+  m_AnchoredPosition: {x: 0, y: 357.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &378705878
@@ -1647,8 +1647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 230.55}
-  m_SizeDelta: {x: 489, y: 192.29999}
+  m_AnchoredPosition: {x: 0, y: 245.45}
+  m_SizeDelta: {x: 489, y: 222.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411732134
 MonoBehaviour:
@@ -1703,7 +1703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &461217212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2815,9 +2815,9 @@ RectTransform:
   m_Father: {fileID: 2052476860}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42, y: 356.7}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -157.7, y: -19.700012}
   m_SizeDelta: {x: 50, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &732881521
@@ -3521,7 +3521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 355.6, y: 1}
   m_SizeDelta: {x: 45, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &872458776
@@ -3596,7 +3596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45.5, y: 0}
+  m_AnchoredPosition: {x: 401.10004, y: 1}
   m_SizeDelta: {x: 50, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &877349314
@@ -5926,7 +5926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -202.7, y: 0.2999878}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1286911386
@@ -6619,8 +6619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 322, y: 650}
+  m_AnchoredPosition: {x: -0.70000076, y: 2.5}
+  m_SizeDelta: {x: 352.4, y: 708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621083167
 MonoBehaviour:
@@ -7233,7 +7233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14.6, y: -24.700012}
+  m_AnchoredPosition: {x: 14.599998, y: -24.700012}
   m_SizeDelta: {x: 26.21, y: 23.29}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1769176825
@@ -7568,8 +7568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 230.55}
-  m_SizeDelta: {x: 489, y: 192.29999}
+  m_AnchoredPosition: {x: 0, y: 242.32}
+  m_SizeDelta: {x: 489, y: 215.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879094801
 MonoBehaviour:
@@ -8467,8 +8467,8 @@ Canvas:
   m_GameObject: {fileID: 2052476856}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
