@@ -15,7 +15,6 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
-      <Path>Build</Path>
       <Path>Builds</Path>
       <Path>DinerDiamond</Path>
       <Path>Library</Path>

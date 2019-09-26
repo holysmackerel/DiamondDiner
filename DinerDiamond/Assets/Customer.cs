@@ -11,7 +11,8 @@ public class Customer : MonoBehaviour
     private int demand;
 
     public GameObject textGameObject;
-    public GameObject imageGameObject;
+    public GameObject faceGameObject;
+    public GameObject foodGameObject;
 
     public bool isAssigned;
     public bool isActive; 
@@ -27,6 +28,8 @@ public class Customer : MonoBehaviour
     }
     
     
+    
+    
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -37,9 +40,13 @@ public class Customer : MonoBehaviour
                 textGameObject = child.gameObject;
             }
 
+            else if (child.gameObject.name == "Face")
+            {
+                faceGameObject = child.gameObject;
+            }
             else
             {
-                imageGameObject = child.gameObject;
+                foodGameObject = child.gameObject;
             }
         }
         

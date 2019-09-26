@@ -18,9 +18,10 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     
-    public List<int> foodProbabilities;
+    
     
     public List<int> diamondNumbers;
+    public List<int> diamondInventories;
     [SerializeField] private List<GameObject> diamondGameObjects;
     private List<GameObject> _textGameObjects;
     public List<GameObject> selectedDiamonds;
@@ -37,9 +38,10 @@ public class GameManager : MonoBehaviour
     public GameObject highScoreInLevelGameObject;
     public GameObject highScoreHUD;
     
+    
     public List<Sprite> foods;
     
-    public bool isMouseDown;
+    public bool areButtonsDown;
     private int _numberSelected;
          
          public int NumberSelected
@@ -94,21 +96,17 @@ public class GameManager : MonoBehaviour
     {
         ToggleButtons();
         ToggleButtons();
-        foods = Resources.LoadAll<Sprite>("Sprites/Foods/").ToList();
-
+        foods = diamondGameObjects.Select(x =>
+            x.GetComponent<DiamondInputController>().foodImage.GetComponent<Image>().sprite).ToList();
+        
         for (int i = 0; i < diamondNumbers.Count; i++)
         {
-            diamondNumbers[i] = GetRandomNumbers(foodProbabilities);
+            diamondGameObjects[i].GetComponent<DiamondInputController>().Strength = diamondNumbers[i];
         }
-
-        for (int i = 0; i < diamondNumbers.Count; i++)
+        
+        for (int i = 0; i < diamondInventories.Count; i++)
         {
-            int num = diamondNumbers[i];
-            GameObject diamond = diamondGameObjects[i];
-            DiamondManager diamondScript = diamond.GetComponent<DiamondManager>();
-                ChangeDiamondText(diamondScript.textGameObject,num);
-                diamondScript.number = num;
-                diamond.transform.GetChild(1).GetComponent<Image>().sprite = ChooseRandomSprite(foods);
+            diamondGameObjects[i].GetComponent<DiamondInputController>().Inventory = diamondInventories[i];
         }
 
         CustomerCount = Random.Range(minCustomers, maxCustomers);
@@ -138,9 +136,10 @@ public class GameManager : MonoBehaviour
     {
         foreach (var diamonds in diamondGameObjects)
         {
-            
 
-            if (diamonds != null) diamonds.GetComponent<DiamondManager>().ResetColor();
+
+            if (diamonds != null) diamonds.GetComponent<DiamondInputController>().ResetColorAndState();
+
         }
         
     }

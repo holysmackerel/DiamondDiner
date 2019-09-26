@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodController : MonoBehaviour
 {
     [SerializeField]
     private int total;
     public GameObject giveGameObject;
+    public GameObject submitFoodButton;
     
     private static FoodController _instance;
     public static FoodController Instance { get { return _instance; } }
@@ -41,6 +43,8 @@ public class FoodController : MonoBehaviour
         } else {
             _instance = this;
         }
+        
+        Instance.submitFoodButton.GetComponent<Button>().interactable = false;
     }
     
     public void ChangeNumber(int newNumber)

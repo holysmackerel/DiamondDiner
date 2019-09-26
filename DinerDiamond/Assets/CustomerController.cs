@@ -112,7 +112,7 @@ public class CustomerController : MonoBehaviour
             Customer customerScript = customer.GetComponent<Customer>();
 
             customerScript.Demand = tempList[i].GetComponent<Customer>().Demand;
-            customer.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = customerScript.Demand.ToString();
+            customerScript.textGameObject.GetComponent<TextMeshProUGUI>().text = customerScript.Demand.ToString();
             customerScript.isAssigned = true;
             
         }
@@ -126,9 +126,12 @@ public class CustomerController : MonoBehaviour
             
             GameObject customer = customerGameObjects[i];
             Customer customerScript = customer.GetComponent<Customer>();
-            Image imageComponent = customerScript.imageGameObject.GetComponent<Image>();
+            Image faceImageComponent = customerScript.faceGameObject.GetComponent<Image>();
 
-                imageComponent.sprite = tempList[i].GetComponent<Customer>().imageGameObject.GetComponent<Image>().sprite;
+            faceImageComponent.sprite = tempList[i].GetComponent<Customer>().faceGameObject.GetComponent<Image>().sprite;
+            
+            Image foodImageComponent = customerScript.foodGameObject.GetComponent<Image>();
+            foodImageComponent.sprite = tempList[i].GetComponent<Customer>().foodGameObject.GetComponent<Image>().sprite;
 
         }
     }
@@ -149,12 +152,15 @@ public class CustomerController : MonoBehaviour
             int rand = GameManager.Instance.GetRandomNumbers(customerProbabilities);
             GameObject go = Instantiate(customerPrefab,customerHost.transform);
             Customer customerScript = go.GetComponent<Customer>();
-            
-            
-            
-            Image image = go.transform.GetChild(1).GetComponent<Image>();
+
+
+            //Assign faces
+            Image image = customerScript.faceGameObject.GetComponent<Image>();
             image.sprite = faces[UnityEngine.Random.Range(0, faces.Count)];
             
+            //Assign Foods
+            Image foodImage = customerScript.foodGameObject.GetComponent<Image>();
+            foodImage.sprite = GameManager.Instance.foods[UnityEngine.Random.Range(0, GameManager.Instance.foods.Count)];
             customerScript.Demand = rand;
             customerScript.isActive = true;
             tempList.Add(go);
@@ -263,6 +269,26 @@ public class CustomerController : MonoBehaviour
 
             }
         }
+    }
+
+    public void SubmitFoods()
+    {
+        if (!Instance.isAnimating)
+        {
+            if (GameManager.Instance.NumberSelected == 3)
+            {
+                GameManager.Instance.NumberSelected = 0;
+
+                IEnumerator coroutine = Instance.CompareDemandWithSelected();
+                StartCoroutine(coroutine);
+
+                GameManager.Instance.ResetDiamonds();
+                FoodController.Instance.ResetNumber();
+                GameManager.Instance.areButtonsDown = false;
+            }
+
+        }
+        
     }
 
 

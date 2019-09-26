@@ -17,6 +17,7 @@ public class DiamondManager : MonoBehaviour, IPointerDownHandler, IPointerEnterH
     private void Awake()
     {
         textGameObject = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        textGameObject.text = number.ToString();
         ResetColor();
     }
 
@@ -25,7 +26,7 @@ public class DiamondManager : MonoBehaviour, IPointerDownHandler, IPointerEnterH
         if (!CustomerController.Instance.isAnimating)
         {
             FoodController.Instance.ChangeNumber(number);
-            GameManager.Instance.isMouseDown = true;
+            GameManager.Instance.areButtonsDown = true;
             GameManager.Instance.NumberSelected++;
             isSwitchedOn = true;
             ChangeColorOfButton();
@@ -42,7 +43,7 @@ public class DiamondManager : MonoBehaviour, IPointerDownHandler, IPointerEnterH
         if (!CustomerController.Instance.isAnimating)
         {
 
-            if (GameManager.Instance.isMouseDown && GameManager.Instance.NumberSelected < 3)
+            if (GameManager.Instance.areButtonsDown && GameManager.Instance.NumberSelected < 3)
             {
                 FoodController.Instance.ChangeNumber(number);
                 GameManager.Instance.NumberSelected++;
@@ -68,7 +69,7 @@ public class DiamondManager : MonoBehaviour, IPointerDownHandler, IPointerEnterH
 
                 GameManager.Instance.ResetDiamonds();
                 FoodController.Instance.ResetNumber();
-                GameManager.Instance.isMouseDown = false;
+                GameManager.Instance.areButtonsDown = false;
             }
 
         }
@@ -79,7 +80,7 @@ public class DiamondManager : MonoBehaviour, IPointerDownHandler, IPointerEnterH
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (GameManager.Instance.isMouseDown && gameObject == GameManager.Instance.selectedDiamonds[0])
+        if (GameManager.Instance.areButtonsDown && gameObject == GameManager.Instance.selectedDiamonds[0])
         {
             if (isSwitchedOn)
             {

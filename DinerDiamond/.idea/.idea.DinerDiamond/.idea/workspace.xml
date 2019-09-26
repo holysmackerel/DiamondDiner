@@ -19,12 +19,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/DiamondManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CustomerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity/2019.3.0a8/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DiamondInputController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8ED2508-5085-4B43-9CED-C18931A314FE/32/cc63cc40/StackTrace.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/d7/29ad48cf/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/bb/c785b301/StackTraceUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity/2019.3.0a8/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/5f/89be34ce/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SubmitButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8ED2508-5085-4B43-9CED-C18931A314FE/54/41d2916c/Exception.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8ED2508-5085-4B43-9CED-C18931A314FE/24/566c6f9b/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8ED2508-5085-4B43-9CED-C18931A314FE/ee/6ab303af/Environment.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,13 +43,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FoodController.cs" />
         <option value="$PROJECT_DIR$/Assets/StartAndStopAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/StopAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Customer.cs" />
-        <option value="$PROJECT_DIR$/Assets/DiamondManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/CustomerController.cs" />
         <option value="$PROJECT_DIR$/Assets/HighScoreHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/DiamondManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/SubmitButtonController.cs" />
+        <option value="$PROJECT_DIR$/Assets/FoodController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Customer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CustomerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DiamondInputController.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
       </list>
     </option>
@@ -80,10 +84,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9996">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="7024">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9996" />
+      <option name="pid" value="7024" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -114,7 +118,9 @@
       <workItem from="1568653098113" duration="6645000" />
       <workItem from="1568827944272" duration="8608000" />
       <workItem from="1569064388755" duration="17720000" />
-      <workItem from="1569175939560" duration="4782000" />
+      <workItem from="1569175939560" duration="5706000" />
+      <workItem from="1569248448131" duration="674000" />
+      <workItem from="1569488828980" duration="8961000" />
     </task>
     <servers />
   </component>
@@ -128,7 +134,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
