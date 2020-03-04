@@ -23,6 +23,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8ED2508-5085-4B43-9CED-C18931A314FE/32/cc63cc40/StackTrace.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/d7/29ad48cf/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinAndPraiseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/bb/c785b301/StackTraceUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity/2019.3.0a8/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FE705F-B8B3-44D5-BE62-DAF83244D046/5f/89be34ce/Debug.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,10 +50,12 @@
         <option value="$PROJECT_DIR$/Assets/DiamondManager.cs" />
         <option value="$PROJECT_DIR$/Assets/SubmitButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/FoodController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Customer.cs" />
-        <option value="$PROJECT_DIR$/Assets/CustomerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/DiamondInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/ResultsController.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/DiamondInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Customer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinAndPraiseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CustomerController.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +123,13 @@
       <workItem from="1569064388755" duration="17720000" />
       <workItem from="1569175939560" duration="5706000" />
       <workItem from="1569248448131" duration="674000" />
-      <workItem from="1569488828980" duration="8961000" />
+      <workItem from="1569488828980" duration="9756000" />
+      <workItem from="1569593430413" duration="769000" />
+      <workItem from="1582550176133" duration="1806000" />
+      <workItem from="1582552208641" duration="1099000" />
+      <workItem from="1583077117034" duration="1808000" />
+      <workItem from="1583078997017" duration="1790000" />
+      <workItem from="1583080818944" duration="1749000" />
     </task>
     <servers />
   </component>

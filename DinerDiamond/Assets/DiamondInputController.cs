@@ -13,9 +13,11 @@ public class DiamondInputController : MonoBehaviour,IPointerUpHandler
     public bool isSwitchedOn;
    [SerializeField] private int _strength; 
    [SerializeField] private int _inventory;
-    public TextMeshProUGUI strengthTextGameObject;
+   [SerializeField] public Sprite foodSprite;
+   public TextMeshProUGUI strengthTextGameObject;
     public TextMeshProUGUI inventoryTextGameObject;
     public GameObject foodImage;
+    public GameObject sliderGameObject;
     
     public int Strength
     {
@@ -37,9 +39,10 @@ public class DiamondInputController : MonoBehaviour,IPointerUpHandler
         {
             _inventory = value; 
             inventoryTextGameObject.GetComponent<TextMeshProUGUI>().text = _inventory.ToString();
-            
-            
-           
+            sliderGameObject.GetComponent<Slider>().value = Inventory;
+
+
+
         }
     }
     
@@ -65,10 +68,18 @@ public class DiamondInputController : MonoBehaviour,IPointerUpHandler
             else if (child.gameObject.name == "Food")
             {
                 foodImage = child.gameObject;
+                foodSprite = foodImage.GetComponent<Sprite>();
+
+            }
+            
+            else if (child.gameObject.name == "Slider")
+            {
+                sliderGameObject = child.gameObject;
             }
         }
         inventoryTextGameObject.text = Inventory.ToString();
         strengthTextGameObject.text = Strength.ToString();
+        
         ChangeColorOfButton(Color.grey);
         ResetColorAndState();
     }
@@ -97,11 +108,11 @@ public class DiamondInputController : MonoBehaviour,IPointerUpHandler
             }
         }
 
-        if (GameManager.Instance.NumberSelected >= 3)
+        if (GameManager.Instance.NumberSelected >= 1)
         {
             FoodController.Instance.submitFoodButton.GetComponent<Button>().interactable = true;
         }
-        else if (GameManager.Instance.NumberSelected < 3)
+        else if (GameManager.Instance.NumberSelected < 1)
         {
             FoodController.Instance.submitFoodButton.GetComponent<Button>().interactable = false;
         }

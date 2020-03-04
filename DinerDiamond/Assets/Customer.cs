@@ -10,6 +10,9 @@ public class Customer : MonoBehaviour
     [SerializeField]
     private int demand;
 
+    public int foodNumber;
+    public Sprite foodSprite;
+
     public GameObject textGameObject;
     public GameObject faceGameObject;
     public GameObject foodGameObject;
@@ -47,6 +50,7 @@ public class Customer : MonoBehaviour
             else
             {
                 foodGameObject = child.gameObject;
+                foodSprite = foodGameObject.GetComponent<Sprite>();
             }
         }
         

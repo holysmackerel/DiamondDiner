@@ -12,6 +12,8 @@ public class CustomerController : MonoBehaviour
     private static CustomerController _instance;
     public static CustomerController Instance { get { return _instance; } }
 
+    public Dictionary<int, string> rewardAndText;
+
     public GameObject coinsTextGameObject;
     public GameObject coinImageGameObject;
     public GameObject descriptionGameObject;
@@ -112,6 +114,7 @@ public class CustomerController : MonoBehaviour
             Customer customerScript = customer.GetComponent<Customer>();
 
             customerScript.Demand = tempList[i].GetComponent<Customer>().Demand;
+            customerScript.foodNumber = tempList[i].GetComponent<Customer>().foodNumber;
             customerScript.textGameObject.GetComponent<TextMeshProUGUI>().text = customerScript.Demand.ToString();
             customerScript.isAssigned = true;
             
@@ -160,7 +163,9 @@ public class CustomerController : MonoBehaviour
             
             //Assign Foods
             Image foodImage = customerScript.foodGameObject.GetComponent<Image>();
-            foodImage.sprite = GameManager.Instance.foods[UnityEngine.Random.Range(0, GameManager.Instance.foods.Count)];
+            int foodNumber = UnityEngine.Random.Range(0, GameManager.Instance.foods.Count);
+            customerScript.foodNumber = foodNumber;
+            foodImage.sprite = GameManager.Instance.foods[foodNumber];
             customerScript.Demand = rand;
             customerScript.isActive = true;
             tempList.Add(go);
@@ -180,32 +185,35 @@ public class CustomerController : MonoBehaviour
         int diff = selected - demand;
         print("diff= " + diff);
 
+        bool isBonus = IsFoodSelectedPreferred();
+        
+
        
         switch (diff)
         {
         case int n when (n < -9):
-            CoinsEarned = 0;
-            Feedback = "!@%#";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(0,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(0);
             break;
         case int n when (n > -8 && n <=-5):
-            CoinsEarned = 0;
-            Feedback = "Oh no!";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(1,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(1);
             break;
         case int n when (n > -4 && n <=-1):
-            CoinsEarned = 3;
-            Feedback = "Not Bad";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(2,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(2);
             break;
         case int n when (n > -1 && n <=2):
-            CoinsEarned =10;
-            Feedback = "Sweet";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(3,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(3);
             break;
         case int n when (n > 2 && n <=5):
-            CoinsEarned = 5;
-            Feedback = "A bit too much";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(4,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(4);
             break;
         case int n when (n > 6):
-            CoinsEarned = 0;
-            Feedback = "Ugh!";
+            CoinsEarned = CoinAndPraiseController.Instance.GetCoinResults(5,isBonus);
+            Feedback =  CoinAndPraiseController.Instance.GetPraise(5);
             break;
         }
         IEnumerator coroutine = PlayResultAnimation();
@@ -275,7 +283,7 @@ public class CustomerController : MonoBehaviour
     {
         if (!Instance.isAnimating)
         {
-            if (GameManager.Instance.NumberSelected == 3)
+            if (GameManager.Instance.NumberSelected >= 1)
             {
                 GameManager.Instance.NumberSelected = 0;
 
@@ -285,10 +293,29 @@ public class CustomerController : MonoBehaviour
                 GameManager.Instance.ResetDiamonds();
                 FoodController.Instance.ResetNumber();
                 GameManager.Instance.areButtonsDown = false;
+                GameManager.Instance.selectedDiamonds.Clear();
+                FoodController.Instance.submitFoodButton.GetComponent<Button>().interactable = false;
             }
 
         }
         
+    }
+
+    public bool IsFoodSelectedPreferred()
+    {
+        foreach (var child in GameManager.Instance.selectedDiamonds)
+        {
+            bool result = child.GetComponent<DiamondInputController>().foodSprite ==
+                       customerGameObjects[0].GetComponent<Customer>().foodSprite;
+            print(result);
+            if (result)
+            {
+                return true;
+            }
+        }
+
+        return false; 
+
     }
 
 
